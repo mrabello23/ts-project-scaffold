@@ -1,4 +1,4 @@
 export default interface Database {
-  query(): Promise<any>;
+  query(query: string, params: any): Promise<any>;
   close(): Promise<any>;
 }

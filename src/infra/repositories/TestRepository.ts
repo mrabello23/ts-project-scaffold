@@ -1,5 +1,7 @@
-import Database from "../Database";
+import Test from "../../entities/Test";
 
-export default class TestRepository {
-  constructor(readonly db: Database) {}
+export default interface TestRepository {
+  getById(id: string): Promise<Test>;
+  getByType(type: string): Promise<Test>;
+  save(data: Test): Promise<void>;
 }

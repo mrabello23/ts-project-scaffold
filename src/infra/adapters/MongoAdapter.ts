@@ -8,7 +8,7 @@ export default class MongoAdapter implements Database {
     this._connection = DB_CONNECTION;
   }
 
-  query(): Promise<any> {
+  query(query: string, params: any): Promise<any> {
     throw new Error("Method not implemented.");
   }
 
