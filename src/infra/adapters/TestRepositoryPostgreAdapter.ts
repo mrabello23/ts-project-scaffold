@@ -4,6 +4,12 @@ import TestRepository from "../repositories/TestRepository";
 
 export default class TestRepositoryPostgreAdapter implements TestRepository {
   constructor(readonly db: Database) {}
+  delete(id: string, data: Test): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  update(data: Test): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
 
   async getById(id: string): Promise<Test> {
     const data = await this.db.query("SELECT * FROM test WHERE id = $1", [id]);
